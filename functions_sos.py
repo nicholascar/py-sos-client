@@ -84,7 +84,7 @@ def get_observation(query_uri_base, aws_urn, procedure, date_start, date_end, mi
     # run the query request
     creds = json.load(open('creds.json'))
     auth = HTTPProxyAuth(creds['username'], creds['password'])
-    ga_proxy = {"http": "http://proxy.ga.gov.au:8080"}
+    ga_proxy = {"http": creds['proxy']}
     r = requests.get(q, headers={'Accept': mimetype}, proxies=ga_proxy, auth=auth)
 
     # handle the SOS response
@@ -116,7 +116,7 @@ def get_featureOfInterest(query_uri_base, aws_urn=None):
     # run the query request
     creds = json.load(open('creds.json'))
     auth = HTTPProxyAuth(creds['username'], creds['password'])
-    ga_proxy = {"http": "http://proxy.ga.gov.au:8080"}
+    ga_proxy = {"http": creds['proxy']}
     headers = {'accept': 'application/json'}
     r = requests.get(q, headers=headers, proxies=ga_proxy, auth=auth)
 

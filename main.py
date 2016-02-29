@@ -11,7 +11,7 @@ def main():
     #print fois
     #creds = json.load(open('creds.json'))
     #auth = HTTPProxyAuth(creds['username'], creds['password'])
-    #ga_proxy = {"http": "http://proxy.ga.gov.au:8080"}
+    #ga_proxy = {"http": creds['proxy']}
     #r = requests.get('http://www.google.com.au', proxies=ga_proxy, auth=auth)
     #print r.status_code
     #print r.text
